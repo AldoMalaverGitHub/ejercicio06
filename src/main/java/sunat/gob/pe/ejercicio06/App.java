@@ -2,9 +2,12 @@ package sunat.gob.pe.ejercicio06;
 
 import java.io.IOException;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -25,6 +28,12 @@ public class App extends Application {
             scene = new Scene(login);
             stage.setScene(scene);
             stage.setTitle("Bienvenido al programa");
+            stage.heightProperty().addListener((ObservableValue<? extends Number> ov, Number t, Number t1) -> {
+               Alert alert = new Alert(Alert.AlertType.INFORMATION);
+               alert.setContentText("Inicial:::" + t + " Final:::" + t1);
+               alert.show();                
+            });
+            
             stage.show();
         
         }catch(IOException ie){

@@ -7,6 +7,8 @@ package sunat.gob.pe.ejercicio06.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,6 +39,22 @@ public class LoginController {
 
         if(validarDatos()){
            
+            
+            StringProperty primerNombre = new SimpleStringProperty("Aldo");
+            StringProperty apellidoPaterno = new SimpleStringProperty("Malaver");
+            
+            System.out.println("PN:::" +  primerNombre.get()); 
+            System.out.println("AP:::" +apellidoPaterno.get());
+            //apellidoPaterno.bind(primerNombre);
+            //System.out.println("AP:::" +apellidoPaterno.get());
+            apellidoPaterno.bindBidirectional(primerNombre);            
+            System.out.println("AP:::" +apellidoPaterno.get());
+            
+            primerNombre.set("Pepito");
+            apellidoPaterno.set("Juancito");
+            System.out.println("PN:::" +  primerNombre.get()); 
+            System.out.println("AP:::" +apellidoPaterno.get());
+            
             FXMLLoader loader =  App.getFXMLLoader("dashboard");
             Parent dashboard = loader.load();
             App.scene.setRoot(dashboard);

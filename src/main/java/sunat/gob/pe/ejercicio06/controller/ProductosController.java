@@ -6,6 +6,8 @@ package sunat.gob.pe.ejercicio06.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -47,15 +49,15 @@ public class ProductosController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
        alumnoTable.setItems(alumnoData);
-       
+              
        idColumn.setCellValueFactory(rowData -> rowData.getValue().getIdAlumno1());
        nombresColumn.setCellValueFactory(rowData -> rowData.getValue().getNombres1());
        apellidosColumn.setCellValueFactory(rowData -> rowData.getValue().getApellidos1());
        emailColumn.setCellValueFactory(rowData -> rowData.getValue().getCorreo1());
        estadoColumn.setCellValueFactory(rowData -> rowData.getValue().getEstado1());
        
-        IAlumnoDao alumnoDao = new AlumnoDaoImpl();
-        alumnoData.addAll(alumnoDao.listarAlumno());
+       IAlumnoDao alumnoDao = new AlumnoDaoImpl();
+       alumnoData.addAll(alumnoDao.listarAlumno());
     }    
     
 }
