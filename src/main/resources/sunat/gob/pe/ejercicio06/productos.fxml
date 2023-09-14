@@ -14,8 +14,8 @@
             <TableView fx:id="alumnoTable" layoutX="4.0" layoutY="186.0" prefHeight="200.0" prefWidth="466.0">
               <columns>
                 <TableColumn fx:id="idColumn" prefWidth="50.0" text="Id" />
-                <TableColumn fx:id="nombreColumn" prefWidth="100.0" text="Nombres" />
-                  <TableColumn fx:id="apellidoColumn" prefWidth="108.0" text="Apellidos" />
+                <TableColumn fx:id="nombresColumn" prefWidth="100.0" text="Nombres" />
+                  <TableColumn fx:id="apellidosColumn" prefWidth="108.0" text="Apellidos" />
                   <TableColumn fx:id="emailColumn" prefWidth="97.0" text="Email" />
                   <TableColumn fx:id="estadoColumn" prefWidth="110.0" text="Estado" />
               </columns>

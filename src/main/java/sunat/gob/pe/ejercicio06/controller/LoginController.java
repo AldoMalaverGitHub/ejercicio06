@@ -36,12 +36,7 @@ public class LoginController {
     public void autenticarUsuario(ActionEvent actionEvent) throws IOException {
 
         if(validarDatos()){
-            IAlumnoDao alumnoDao = new AlumnoDaoImpl();
-            Alumno alumno = new Alumno(0L, "Aldo", "Malaver", 
-                    "Masculino", "Avenida ABC",
-            "almalaver@gmail.com", 1);
-            
-            alumnoDao.guardarAlumno(alumno);
+           
             FXMLLoader loader =  App.getFXMLLoader("dashboard");
             Parent dashboard = loader.load();
             App.scene.setRoot(dashboard);

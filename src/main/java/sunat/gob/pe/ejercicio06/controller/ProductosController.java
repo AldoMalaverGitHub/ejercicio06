@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import sunat.gob.pe.ejercicio06.model.dao.IAlumnoDao;
+import sunat.gob.pe.ejercicio06.model.dao.impl.AlumnoDaoImpl;
 import sunat.gob.pe.ejercicio06.model.entities.Alumno;
 
 /**
@@ -37,10 +39,9 @@ public class ProductosController implements Initializable {
     private TableColumn<Alumno, String> emailColumn;
     
     @FXML
-    private TableColumn<Alumno, String> estadoColumn;
+    private TableColumn<Alumno, Integer> estadoColumn;
     
-    private ObservableList<Alumno> alumnoData = FXCollections.observableArrayList();
-    
+    private ObservableList<Alumno> alumnoData = FXCollections.observableArrayList();    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -48,7 +49,13 @@ public class ProductosController implements Initializable {
        alumnoTable.setItems(alumnoData);
        
        idColumn.setCellValueFactory(rowData -> rowData.getValue().getIdAlumno1());
+       nombresColumn.setCellValueFactory(rowData -> rowData.getValue().getNombres1());
+       apellidosColumn.setCellValueFactory(rowData -> rowData.getValue().getApellidos1());
+       emailColumn.setCellValueFactory(rowData -> rowData.getValue().getCorreo1());
+       estadoColumn.setCellValueFactory(rowData -> rowData.getValue().getEstado1());
        
+        IAlumnoDao alumnoDao = new AlumnoDaoImpl();
+        alumnoData.addAll(alumnoDao.listarAlumno());
     }    
     
 }
