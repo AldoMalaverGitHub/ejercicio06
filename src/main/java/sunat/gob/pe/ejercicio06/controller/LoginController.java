@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Window;
 import sunat.gob.pe.ejercicio06.App;
 import sunat.gob.pe.ejercicio06.model.dao.IAlumnoDao;
 import sunat.gob.pe.ejercicio06.model.dao.impl.AlumnoDaoImpl;
@@ -60,7 +61,13 @@ public class LoginController {
             App.scene.setRoot(dashboard);
             DashboardController dashboardController = loader.<DashboardController>getController();
             dashboardController.setMensaje(txtUsuario.getText());            
+            
+            Window window = App.scene.getWindow();
+            window.setWidth(700);
+            window.setHeight(450);
             App.scene.getStylesheets().add(App.class.getResource("styles.css").toExternalForm());
+            
+            
         }  
        
     }
