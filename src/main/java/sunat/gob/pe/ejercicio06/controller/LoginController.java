@@ -15,6 +15,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Window;
 import sunat.gob.pe.ejercicio06.App;
 import sunat.gob.pe.ejercicio06.model.dao.IAlumnoDao;
@@ -111,6 +113,12 @@ public class LoginController {
         listaUsuarios.add(new Usuario("mherrera", "dsjnsjd234"));
 
         return listaUsuarios;
+    }
+    
+    public void ejecutarEnter(KeyEvent keyEvent) throws IOException{
+        if(keyEvent.getCode().equals(KeyCode.ENTER)){
+            autenticarUsuario(new ActionEvent());
+        }
     }
 
 }

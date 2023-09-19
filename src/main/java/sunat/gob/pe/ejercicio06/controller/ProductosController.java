@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import sunat.gob.pe.ejercicio06.controller.enums.EstadoEnum;
 import sunat.gob.pe.ejercicio06.model.dao.IAlumnoDao;
 import sunat.gob.pe.ejercicio06.model.dao.impl.AlumnoDaoImpl;
 import sunat.gob.pe.ejercicio06.model.entities.Alumno;
@@ -44,7 +45,7 @@ public class ProductosController implements Initializable {
     private TableColumn<Alumno, String> emailColumn;
     
     @FXML
-    private TableColumn<Alumno, Integer> estadoColumn;
+    private TableColumn<Alumno, String> estadoColumn;
     
     @FXML
     private TextField txtNombres;
@@ -72,7 +73,9 @@ public class ProductosController implements Initializable {
         nombresColumn.setCellValueFactory(rowData -> rowData.getValue().getNombres1());
         apellidosColumn.setCellValueFactory(rowData -> rowData.getValue().getApellidos1());
         emailColumn.setCellValueFactory(rowData -> rowData.getValue().getCorreo1());
-        estadoColumn.setCellValueFactory(rowData -> rowData.getValue().getEstado1());
+        
+        estadoColumn.setCellValueFactory(rowData -> new SimpleStringProperty(
+                EstadoEnum.getStringValueFromInt(rowData.getValue().getEstado())));
         
         IAlumnoDao alumnoDao = new AlumnoDaoImpl();
         alumnoData.addAll(alumnoDao.listarAlumno());
