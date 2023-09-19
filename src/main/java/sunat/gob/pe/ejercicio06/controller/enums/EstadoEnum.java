@@ -31,7 +31,7 @@ public enum EstadoEnum {
             }
         }
 
-        throw new IllegalArgumentException("the given number doesn't match any Status.");
+        throw new IllegalArgumentException("el numero dado no se encontro.");
     }
 
 }

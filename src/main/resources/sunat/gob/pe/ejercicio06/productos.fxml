@@ -32,7 +32,7 @@
                         <TextField fx:id="txtNombres" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="200.0" GridPane.columnIndex="1" />
                         <TextField fx:id="txtApellidos" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <TextField fx:id="txtEmail" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Button fx:id="btnGuardar" mnemonicParsing="false" text="Guardar" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                        <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#guardarAlumno" text="Guardar" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets right="20.0" />
                            </GridPane.margin>

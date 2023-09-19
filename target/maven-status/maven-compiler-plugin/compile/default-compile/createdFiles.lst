@@ -3,6 +3,7 @@ sunat\gob\pe\ejercicio06\controller\LoginController.class
 sunat\gob\pe\ejercicio06\SystemInfo.class
 sunat\gob\pe\ejercicio06\controller\ProductosController.class
 sunat\gob\pe\ejercicio06\model\dao\impl\AlumnoDaoImpl.class
+sunat\gob\pe\ejercicio06\controller\ProductosController$1.class
 sunat\gob\pe\ejercicio06\model\dao\IAlumnoDao.class
 sunat\gob\pe\ejercicio06\model\util\Conexion.class
 sunat\gob\pe\ejercicio06\model\entities\Alumno.class
