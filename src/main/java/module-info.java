@@ -7,7 +7,9 @@ module sunat.gob.pe.ejercicio06 {
     requires converter.scalars;
     requires converter.gson;
     
+    
     opens sunat.gob.pe.ejercicio06;
     opens sunat.gob.pe.ejercicio06.controller;
+    opens sunat.gob.pe.ejercicio06.controller.service.dto;
     exports sunat.gob.pe.ejercicio06;
 }

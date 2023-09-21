@@ -5,6 +5,7 @@
 package sunat.gob.pe.ejercicio06.controller.service;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.POST;
 import sunat.gob.pe.ejercicio06.controller.service.dto.AuthClientDto;
 import sunat.gob.pe.ejercicio06.controller.service.dto.TokenDto;
@@ -16,6 +17,6 @@ import sunat.gob.pe.ejercicio06.controller.service.dto.TokenDto;
 public interface TokenInterface {
     
     @POST("authenticate-client")
-    Call<TokenDto> loginClient(AuthClientDto authClientDto);
+    Call<TokenDto> loginClient(@Body AuthClientDto authClientDto);
     
 }

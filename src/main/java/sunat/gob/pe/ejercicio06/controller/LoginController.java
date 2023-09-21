@@ -23,6 +23,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import sunat.gob.pe.ejercicio06.App;
 import sunat.gob.pe.ejercicio06.controller.service.ClienteInterface;
+import sunat.gob.pe.ejercicio06.controller.service.TokenInterface;
+import sunat.gob.pe.ejercicio06.controller.service.dto.AuthClientDto;
+import sunat.gob.pe.ejercicio06.controller.service.dto.TokenDto;
+import sunat.gob.pe.ejercicio06.controller.util.ApiClient;
 import sunat.gob.pe.ejercicio06.controller.util.ApiClientSimple;
 import sunat.gob.pe.ejercicio06.model.dao.IAlumnoDao;
 import sunat.gob.pe.ejercicio06.model.dao.impl.AlumnoDaoImpl;
@@ -34,7 +38,7 @@ import sunat.gob.pe.ejercicio06.model.entities.Usuario;
  *
  * @author Aldo Malaver
  */
-public class LoginController {
+public class LoginController implements Callback<TokenDto>{
 
     @FXML
     private TextField txtUsuario;
@@ -45,6 +49,11 @@ public class LoginController {
     @FXML
     public void autenticarUsuario(ActionEvent actionEvent) throws IOException {
 
+        TokenInterface tokenInterface = ApiClient.getClient().create(TokenInterface.class);
+        AuthClientDto dto = new AuthClientDto("valor1", "valor2", "25432543534", "45345654645");
+        Call<TokenDto> token = tokenInterface.loginClient(dto);
+        token.enqueue(this);
+        
         if(validarDatos()){
             
             ClienteInterface clienteInterface = ApiClientSimple.getClient().create(ClienteInterface.class);
@@ -62,6 +71,8 @@ public class LoginController {
                     
                 }
             });
+            
+            
             
            
             
@@ -141,6 +152,18 @@ public class LoginController {
         if(keyEvent.getCode().equals(KeyCode.ENTER)){
             autenticarUsuario(new ActionEvent());
         }
+    }
+
+    @Override
+    public void onResponse(Call<TokenDto> call, Response<TokenDto> response) {
+        if(response.isSuccessful()){
+            System.out.println(response.body().getToken());
+        }
+    }
+
+    @Override
+    public void onFailure(Call<TokenDto> call, Throwable thrwbl) {
+        
     }
 
 }
