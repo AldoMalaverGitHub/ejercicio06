@@ -1,5 +1,4 @@
-sunat\gob\pe\ejercicio06\controller\DashboardController.class
-sunat\gob\pe\ejercicio06\controller\LoginController.class
+sunat\gob\pe\ejercicio06\controller\util\ApiClientSimple.class
 sunat\gob\pe\ejercicio06\SystemInfo.class
 sunat\gob\pe\ejercicio06\controller\ProductosController.class
 sunat\gob\pe\ejercicio06\model\dao\impl\AlumnoDaoImpl.class
@@ -9,8 +8,12 @@ sunat\gob\pe\ejercicio06\model\util\Conexion.class
 sunat\gob\pe\ejercicio06\model\entities\Alumno.class
 module-info.class
 sunat\gob\pe\ejercicio06\controller\PedidosController.class
+sunat\gob\pe\ejercicio06\controller\service\ClienteInterface.class
+sunat\gob\pe\ejercicio06\model\entities\Usuario.class
+sunat\gob\pe\ejercicio06\controller\DashboardController.class
+sunat\gob\pe\ejercicio06\controller\LoginController.class
 sunat\gob\pe\ejercicio06\controller\MenuController.class
 sunat\gob\pe\ejercicio06\controller\HistorialController.class
+sunat\gob\pe\ejercicio06\controller\LoginController$1.class
 sunat\gob\pe\ejercicio06\controller\enums\EstadoEnum.class
 sunat\gob\pe\ejercicio06\App.class
-sunat\gob\pe\ejercicio06\model\entities\Usuario.class

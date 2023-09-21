@@ -18,7 +18,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Window;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import sunat.gob.pe.ejercicio06.App;
+import sunat.gob.pe.ejercicio06.controller.service.ClienteInterface;
+import sunat.gob.pe.ejercicio06.controller.util.ApiClientSimple;
 import sunat.gob.pe.ejercicio06.model.dao.IAlumnoDao;
 import sunat.gob.pe.ejercicio06.model.dao.impl.AlumnoDaoImpl;
 import sunat.gob.pe.ejercicio06.model.entities.Alumno;
@@ -41,6 +46,23 @@ public class LoginController {
     public void autenticarUsuario(ActionEvent actionEvent) throws IOException {
 
         if(validarDatos()){
+            
+            ClienteInterface clienteInterface = ApiClientSimple.getClient().create(ClienteInterface.class);
+            Call<String> cliente = clienteInterface.devolverValor();
+            cliente.enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+                    if(response.isSuccessful()){
+                        System.out.println("retorno de servicio:::" + response.body());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable thrwbl) {
+                    
+                }
+            });
+            
            
             
             StringProperty primerNombre = new SimpleStringProperty("Aldo");
