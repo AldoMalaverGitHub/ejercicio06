@@ -5,6 +5,7 @@ module sunat.gob.pe.ejercicio06 {
     requires java.sql;
     requires retrofit;
     requires converter.scalars;
+    requires converter.gson;
     
     opens sunat.gob.pe.ejercicio06;
     opens sunat.gob.pe.ejercicio06.controller;
