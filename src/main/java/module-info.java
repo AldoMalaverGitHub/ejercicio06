@@ -3,6 +3,7 @@ module sunat.gob.pe.ejercicio06 {
     requires java.base;
     requires javafx.fxml;
     requires java.sql;
+    requires retrofit;  
     
     opens sunat.gob.pe.ejercicio06;
     opens sunat.gob.pe.ejercicio06.controller;
